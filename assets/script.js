@@ -18,13 +18,26 @@ const slides = [
   },
 ];
 
+// Variables fixes
 const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
+const bannerImg = document.querySelector(".banner-img");
+const bannerText = document.querySelector("#banner p");
+
+// variable point de départ de l'index des diapos
+let currentSlide = 0;
+
+// Fonction pour mettre à jour l'affichage de l'image et le texte
+function updateSlide(i) {
+  const slide = slides[i];
+  bannerImg.src = `./assets/images/slideshow/${slide.image} `;
+  bannerText.innerHTML = slide.tagLine;
+}
 
 arrowLeft.addEventListener("click", () => {
-  console.log("Flèche gauche cliquée !");
+  // console.log("Flèche gauche cliquée !");
 });
 
 arrowRight.addEventListener("click", () => {
-  console.log("Flèche droite cliquée !");
+  // console.log("Flèche droite cliquée !");
 });
