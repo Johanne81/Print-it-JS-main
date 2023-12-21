@@ -38,6 +38,10 @@ arrowLeft.addEventListener("click", () => {
   // console.log("Flèche gauche cliquée !");
 });
 
+// Au clic droit, modification du slide, défilement infini
 arrowRight.addEventListener("click", () => {
-  // console.log("Flèche droite cliquée !");
+  // console.log(currentSlide);
+  currentSlide = (currentSlide + 1) % slides.length;
+  // console.log(currentSlide);
+  updateSlide(currentSlide);
 });
