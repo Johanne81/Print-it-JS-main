@@ -23,6 +23,7 @@ const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 const bannerImg = document.querySelector(".banner-img");
 const bannerText = document.querySelector("#banner p");
+const dots = document.getElementsByClassName("dot");
 
 // variable point de départ de l'index des diapos
 let currentSlide = 0;
