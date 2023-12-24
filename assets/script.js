@@ -34,14 +34,20 @@ function updateSlide(i) {
   bannerText.innerHTML = slide.tagLine;
 }
 
-arrowLeft.addEventListener("click", () => {
-  // console.log("Flèche gauche cliquée !");
-});
-
 // Au clic droit, modification du slide, défilement infini
 arrowRight.addEventListener("click", () => {
   // console.log(currentSlide);
   currentSlide = (currentSlide + 1) % slides.length;
   // console.log(currentSlide);
+  updateSlide(currentSlide);
+});
+
+// Au clic gauche, modification du slide, défilement infini
+arrowLeft.addEventListener("click", () => {
+  if (currentSlide === 0) {
+    currentSlide = slides.length - 1;
+  } else {
+    currentSlide = (currentSlide - 1) % slides.length;
+  }
   updateSlide(currentSlide);
 });
