@@ -33,13 +33,20 @@ function updateSlide(i) {
   const slide = slides[i];
   bannerImg.src = `./assets/images/slideshow/${slide.image} `;
   bannerText.innerHTML = slide.tagLine;
+
+  // Boucle pour mettre à jour les points en fonction de l'image
+  for (let j = 0; j < dots.length; j++) {
+    if (j === i) {
+      dots[j].classList.add("dot_selected");
+    } else {
+      dots[j].classList.remove("dot_selected");
+    }
+  }
 }
 
 // Au clic droit, modification du slide, défilement infini
 arrowRight.addEventListener("click", () => {
-  // console.log(currentSlide);
   currentSlide = (currentSlide + 1) % slides.length;
-  // console.log(currentSlide);
   updateSlide(currentSlide);
 });
 
